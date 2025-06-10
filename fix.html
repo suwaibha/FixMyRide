@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FixMyRide - Instant Roadside Assistance</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    .gradient-bg {
+      background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+    }
+    .feature-card:hover {
+      transform: translateY(-5px);
+      transition: all 0.3s ease;
+    }
+    .mechanic-status {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.7; }
+      50% { opacity: 1; }
+      100% { opacity: 0.7; }
+    }
+    .tab-active {
+      border-bottom: 3px solid #3b82f6;
+      color: #3b82f6;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-800">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md py-4">
+    <div class="container mx-auto px-6 flex justify-between items-center">
+      <div class="flex items-center">
+        <span class="text-2xl font-bold text-blue-600">FixMyRide</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#how-it-works" class="hover:text-blue-600">How It Works</a>
+        <a href="#features" class="hover:text-blue-600">Features</a>
+        <a href="#user-dashboard" class="hover:text-blue-600">User Dashboard</a>
+        <a href="#mechanics" class="hover:text-blue-600">For Mechanics</a>
+        <a href="#" class="hover:text-blue-600">About Us</a>
+      </div>
+      <div>
+        <button class="hidden md:block bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-full">Login</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="gradient-bg text-white py-20">
+    <div class="container mx-auto px-6 flex flex-col-reverse lg:flex-row items-center">
+      <div class="lg:w-1/2 flex flex-col items-start mt-8 lg:mt-0">
+        <h1 class="text-4xl lg:text-5xl font-bold leading-tight mb-4">Instant Roadside Help, Just a Tap Away</h1>
+        <p class="text-xl mb-8">Connecting you with nearby verified mechanics anytime, anywhere.</p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+          <button class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300">
+            Request Help Now
+          </button>
+          <button class="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-blue-600 transition duration-300">
+            Download the App
+          </button>
+        </div>
+      </div>
+      <div class="lg:w-1/2 flex justify-center">
+        <img src="/how.jpg" alt="Car breakdown assistance" class="rounded-lg shadow-xl" />
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center">1</div>
+          <div class="h-24 flex items-center justify-center mb-4">
+            <i class="fas fa-user-plus text-4xl text-blue-600"></i>
+          </div>
+          <h3 class="font-bold mb-2">Register/Login</h3>
+          <p class="text-gray-600 text-sm">Quick signup with mobile or email</p>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center">2</div>
+          <div class="h-24 flex items-center justify-center mb-4">
+            <i class="fas fa-location-dot text-4xl text-blue-600"></i>
+          </div>
+          <h3 class="font-bold mb-2">Share Location</h3>
+          <p class="text-gray-600 text-sm">Enable GPS for precise location</p>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center">3</div>
+          <div class="h-24 flex items-center justify-center mb-4">
+            <i class="fas fa-car text-4xl text-blue-600"></i>
+          </div>
+          <h3 class="font-bold mb-2">Choose Vehicle</h3>
+          <p class="text-gray-600 text-sm">Select car, bike or other vehicle type</p>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center">4</div>
+          <div class="h-24 flex items-center justify-center mb-4">
+            <i class="fas fa-wrench text-4xl text-blue-600"></i>
+          </div>
+          <h3 class="font-bold mb-2">Connect Mechanic</h3>
+          <p class="text-gray-600 text-sm">Get matched with nearby verified professionals</p>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center">5</div>
+          <div class="h-24 flex items-center justify-center mb-4">
+            <i class="fas fa-map-marked-alt text-4xl text-blue-600"></i>
+          </div>
+          <h3 class="font-bold mb-2">Track Arrival</h3>
+          <p class="text-gray-600 text-sm">Watch mechanic's journey in real-time</p>
+        </div>
+        
+        <!-- Step 6 -->
+        <div class="bg-white p-6 rounded-lg shadow-md text-center relative">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center">6</div>
+          <div class="h-24 flex items-center justify-center mb-4">
+            <i class="fas fa-star text-4xl text-blue-600"></i>
+          </div>
+          <h3 class="font-bold mb-2">Pay & Rate</h3>
+          <p class="text-gray-600 text-sm">Digital payment and review service</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- App Demo -->
+  <section class="py-16">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 mb-10 lg:mb-0">
+          <img src="/home.jpg" alt="FixMyRide App" class="mx-auto rounded-3xl shadow-xl" />
+        </div>
+        <div class="lg:w-1/2 lg:pl-16">
+          <h2 class="text-3xl font-bold mb-6">Experience Roadside Assistance, Reimagined</h2>
+          <p class="text-gray-600 mb-8">Gone are the days of endless waiting and unknown help. FixMyRide brings transparent, quick, and reliable assistance right to your fingertips.</p>
+          
+          <div class="bg-blue-50 p-6 rounded-lg shadow-md mb-6">
+            <h3 class="font-bold text-blue-600 mb-2">Current Emergency Response Time</h3>
+            <div class="text-3xl font-bold">12 minutes</div>
+            <p class="text-gray-600 text-sm">Average arrival time in urban areas</p>
+          </div>
+          
+          <div class="flex flex-wrap -mx-2">
+            <div class="w-1/2 px-2 mb-4">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="font-bold">500+</div>
+                <p class="text-gray-600 text-sm">Verified mechanics</p>
+              </div>
+            </div>
+            <div class="w-1/2 px-2 mb-4">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="font-bold">24/7</div>
+                <p class="text-gray-600 text-sm">Service availability</p>
+              </div>
+            </div>
+            <div class="w-1/2 px-2">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="font-bold">4.8/5</div>
+                <p class="text-gray-600 text-sm">Customer rating</p>
+              </div>
+            </div>
+            <div class="w-1/2 px-2">
+              <div class="bg-white p-4 rounded-lg shadow-sm">
+                <div class="font-bold">50+</div>
+                <p class="text-gray-600 text-sm">Cities covered</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features -->
+  <section id="features" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="feature-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-map-marker-alt text-xl text-blue-600"></i>
+            </div>
+            <h3 class="font-bold">Real-Time GPS Tracking</h3>
+          </div>
+          <p class="text-gray-600">Know exactly where your mechanic is and when they'll arrive with live tracking and accurate ETA.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="feature-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-id-card text-xl text-blue-600"></i>
+            </div>
+            <h3 class="font-bold">Mechanic Profile & ETA</h3>
+          </div>
+          <p class="text-gray-600">View mechanic details, credentials, ratings, and precise estimated time of arrival before confirming.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="feature-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-comments text-xl text-blue-600"></i>
+            </div>
+            <h3 class="font-bold">In-App Chat</h3>
+          </div>
+          <p class="text-gray-600">Communicate directly with your assigned mechanic to share details about your vehicle issue.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="feature-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-credit-card text-xl text-blue-600"></i>
+            </div>
+            <h3 class="font-bold">Digital Payments</h3>
+          </div>
+          <p class="text-gray-600">Pay seamlessly with multiple options including UPI, cards, and Razorpay integration.</p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="feature-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-receipt text-xl text-blue-600"></i>
+            </div>
+            <h3 class="font-bold">Service History & Receipts</h3>
+          </div>
+          <p class="text-gray-600">Access complete service history, receipts, and maintenance records at any time.</p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="feature-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+          <div class="flex items-center mb-4">
+            <div class="bg-blue-100 p-3 rounded-full mr-4">
+              <i class="fas fa-star text-xl text-blue-600"></i>
+            </div>
+            <h3 class="font-bold">Ratings & Reviews</h3>
+          </div>
+          <p class="text-gray-600">Rate your experience and read verified reviews to choose the best mechanics in your area.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Dashboard -->
+  <section id="user-dashboard" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center">User Dashboard Experience</h2>
+      <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-200 max-w-5xl mx-auto">
+        <!-- Dashboard Header -->
+        <div class="bg-blue-600 text-white p-6">
+          <div class="flex justify-between items-center">
+            <div>
+              <h3 class="text-2xl font-bold">Hello, Priya!</h3>
+              <p class="opacity-90">Welcome back to your FixMyRide dashboard</p>
+            </div>
+            <div class="flex items-center space-x-4">
+              <button class="bg-white text-blue-600 py-2 px-4 rounded-full text-sm font-medium">
+                <i class="fas fa-plus mr-2"></i>Add Vehicle
+              </button>
+              <div class="relative">
+                <i class="fas fa-bell text-xl"></i>
+                <span class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Dashboard Tabs -->
+        <div class="flex border-b">
+          <button class="px-6 py-4 font-medium text-gray-700 hover:text-blue-600 tab-active">Dashboard</button>
+          <button class="px-6 py-4 font-medium text-gray-500 hover:text-blue-600">My Vehicles</button>
+          <button class="px-6 py-4 font-medium text-gray-500 hover:text-blue-600">Service History</button>
+          <button class="px-6 py-4 font-medium text-gray-500 hover:text-blue-600">My Profile</button>
+        </div>
+        
+        <!-- Quick Actions -->
+        <div class="p-6 border-b">
+          <h4 class="font-bold text-lg mb-4">Quick Actions</h4>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <button class="bg-blue-50 hover:bg-blue-100 p-4 rounded-lg flex flex-col items-center justify-center transition duration-300">
+              <div class="bg-blue-100 p-3 rounded-full mb-2">
+                <i class="fas fa-car-battery text-blue-600 text-xl"></i>
+              </div>
+              <span class="font-medium text-sm">Battery Help</span>
+            </button>
+            <button class="bg-blue-50 hover:bg-blue-100 p-4 rounded-lg flex flex-col items-center justify-center transition duration-300">
+              <div class="bg-blue-100 p-3 rounded-full mb-2">
+                <i class="fas fa-gas-pump text-blue-600 text-xl"></i>
+              </div>
+              <span class="font-medium text-sm">Fuel Delivery</span>
+            </button>
+            <button class="bg-blue-50 hover:bg-blue-100 p-4 rounded-lg flex flex-col items-center justify-center transition duration-300">
+              <div class="bg-blue-100 p-3 rounded-full mb-2">
+                <i class="fas fa-car-crash text-blue-600 text-xl"></i>
+              </div>
+              <span class="font-medium text-sm">Towing</span>
+            </button>
+            <button class="bg-blue-50 hover:bg-blue-100 p-4 rounded-lg flex flex-col items-center justify-center transition duration-300">
+              <div class="bg-blue-100 p-3 rounded-full mb-2">
+                <i class="fas fa-tools text-blue-600 text-xl"></i>
+              </div>
+              <span class="font-medium text-sm">General Repair</span>
+            </button>
+          </div>
+        </div>
+        
+        <!-- Active Service Request -->
+        <div class="p-6 border-b">
+          <div class="flex justify-between items-center mb-4">
+            <h4 class="font-bold text-lg">Active Service Request</h4>
+            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium px-3 py-1 rounded-full">In Progress</span>
+          </div>
+          
+          <div class="bg-gray-50 rounded-lg p-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div>
+                <p class="text-gray-500 text-sm mb-1">Service Type</p>
+                <p class="font-medium">Flat Tire Replacement</p>
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm mb-1">Vehicle</p>
+                <p class="font-medium">Maruti Swift (KA-01-AB-1234)</p>
+              </div>
+              <div>
+                <p class="text-gray-500 text-sm mb-1">Requested At</p>
+                <p class="font-medium">Today, 11:23 AM</p>
+              </div>
+            </div>
+            
+            <div class="mt-4 border-t pt-4">
+              <div class="flex items-start">
+                <div class="mr-4">
+                  <img src="/api/placeholder/50/50" alt="Mechanic" class="rounded-full" />
+                </div>
+                <div>
+                  <p class="font-medium">Rajesh K.</p>
+                  <div class="flex items-center text-sm text-gray-500">
+                    <i class="fas fa-star text-yellow-500 mr-1"></i>
+                    <span>4.9 (243 services)</span>
+                  </div>
+                  <div class="mt-2 flex items-center text-sm">
+                    <span class="text-green-600 font-medium flex items-center">
+                      <i class="fas fa-circle text-xs mr-1"></i>Arriving in 8 minutes
+                    </span>
+                    <span class="mx-2">•</span>
+                    <span>2.1 km away</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mt-4 flex space-x-3">
+              <button class="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg font-medium text-sm transition duration-300">
+                <i class="fas fa-map-marker-alt mr-2"></i>Track Location
+              </button>
+              <button class="flex-1 border border-blue-600 text-blue-600 hover:bg-blue-50 py-2 px-4 rounded-lg font-medium text-sm transition duration-300">
+                <i class="fas fa-comment mr-2"></i>Chat with Mechanic
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Recent Services & Vehicle Status -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
+          <!-- Recent Services -->
+          <div>
+            <h4 class="font-bold text-lg mb-4">Recent Services</h4>
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-3 rounded-lg">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Battery Jump Start</span>
+                  <span class="text-sm text-gray-500">Apr 22, 2025</span>
+                </div>
+                <p class="text-sm text-gray-500 mb-2">Honda City • ₹650</p>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center text-sm">
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <span class="ml-1 text-gray-700">(5.0)</span>
+                  </div>
+                  <button class="text-blue-600 text-xs font-medium hover:underline">View Details</button>
+                </div>
+              </div>
+              
+              <div class="bg-gray-50 p-3 rounded-lg">
+                <div class="flex justify-between mb-1">
+                  <span class="font-medium">Flat Tire Replacement</span>
+                  <span class="text-sm text-gray-500">Apr 15, 2025</span>
+                </div>
+                <p class="text-sm text-gray-500 mb-2">Maruti Swift • ₹800</p>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center text-sm">
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-yellow-500"></i>
+                    <i class="fas fa-star text-gray-300"></i>
+                    <span class="ml-1 text-gray-700">(4.0)</span>
+                  </div>
+                  <button class="text-blue-600 text-xs font-medium hover:underline">View Details</button>
+                </div>
+              </div>
+              
+              <button class="w-full text-center text-blue-600 text-sm font-medium py-2 hover:underline">
+                View All Services
+              </button>
+            </div>
+          </div>
+          
+          <!-- Vehicle Status -->
+          <div>
+            <h4 class="font-bold text-lg mb-4">Your Vehicles</h4>
+            
+            <div class="bg-gray-50 p-4 rounded-lg mb-4">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                  <i class="fas fa-car text-blue-600 text-xl mr-3"></i>
+                  <div>
+                    <h5 class="font-medium">Honda City</h5>
+                    <p class="text-xs text-gray-500">DL-01-AB-5678</p>
+                  </div>
+                </div>
+                <div class="bg-green-100 px-2 py-1 rounded-full">
+                  <span class="text-xs font-medium text-green-700">Good Condition</span>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-2 text-sm">
+                <div>
+                  <p class="text-gray-500">Last Service</p>
+                  <p class="font-medium">Apr 22, 2025</p>
+                </div>
+                <div>
+                  <p class="text-gray-500">Service Due</p>
+                  <p class="font-medium">Jul 22, 2025</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center">
+                  <i class="fas fa-car text-blue-600 text-xl mr-3"></i>
+                  <div>
+                    <h5 class="font-medium">Maruti Swift</h5>
+                    <p class="text-xs text-gray-500">KA-01-AB-1234</p>
+                  </div>
+                </div>
+                <div class="bg-yellow-100 px-2 py-1 rounded-full">
+                  <span class="text-xs font-medium text-yellow-700">Service Due</span>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-2 gap-2 text-sm">
+                <div>
+                  <p class="text-gray-500">Last Service</p>
+                  <p class="font-medium">Feb 15, 2025</p>
+                </div>
+                <div>
+                  <p class="text-gray-500">Service Due</p>
+                  <p class="font-medium text-yellow-700">Overdue</p>
+                </div>
+              </div>
+            </div>
+            
+            <button class="w-full text-center text-blue-600 text-sm font-medium py-3 mt-4 hover:underline">
+              Add New Vehicle
+            </button>
+          </div>
+        </div>
+        
+        <!-- Subscription Banner -->
+        <div class="p-6 bg-blue-50">
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-4 md:mb-0">
+              <h4 class="font-bold text-lg">FixMyRide Premium</h4>
+              <p class="text-gray-700">Get priority service, free towing & more</p>
+            </div>
+            <button class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-6 rounded-lg font-medium transition duration-300">
+              Upgrade Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mechanic Dashboard Preview -->
+  <section id="mechanics" class="py-16">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 text-center">Mechanic Dashboard</h2>
+      <div class="flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 mb-8 lg:mb-0">
+          <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-200">
+            <div class="flex justify-between items-center mb-6">
+              <div>
+                <h3 class="font-bold text-xl">Welcome back, Rahul</h3>
+                <p class="text-gray-600">You're online and visible to customers</p>
+              </div>
+              <div class="mechanic-status flex items-center">
+                <span class="h-3 w-3 bg-green-500 rounded-full mr-2"></span>
+                <span class="text-green-500 font-medium">Active</span>
+              </div>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="font-bold text-gray-700 mb-3">New Request (1)</h4>
+              <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium">Flat Tire Assistance</span>
+                  <span class="text-sm font-medium text-blue-600">3.2 km away</span>
+                </div>
+                <p class="text-gray-600 text-sm mb-3">Honda City, White • Sector 18, Noida</p>
+                <div class="flex space-x-2">
+                  <button class="bg-blue-600 text-white text-sm py-2 px-4 rounded-lg hover:bg-blue-700 flex-grow">Accept Request</button>
+                  <button class="border border-gray-300 text-gray-700 text-sm py-2 px-4 rounded-lg hover:bg-gray-100">Decline</button>
+                </div>
+              </div>
+            </div>
+            
+            <div class="mb-6">
+              <h4 class="font-bold text-gray-700 mb-3">Today's Earnings</h4>
+              <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                <div class="text-2xl font-bold text-green-600">₹1,250</div>
+                <div class="flex justify-between text-sm text-gray-600">
+                  <span>4 services completed</span>
+                  <span>Avg. ₹312 per service</span>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 class="font-bold text-gray-700 mb-3">Upcoming Service</h4>
+              <div class="p-4 rounded-lg border border-gray-200">
+                <div class="flex justify-between mb-2">
+                  <span class="font-medium">Battery Jump Start</span>
+                  <span class="text-sm font-medium text-orange-600">Scheduled for 2:30 PM</span>
+                </div>
+                <p class="text-gray-600 text-sm">Maruti Swift, Red • DLF Cyber City, Gurugram</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-1/2 lg:pl-12">
+          <h3 class="text-2xl font-bold mb-6">Become a FixMyRide Partner</h3>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-start">
+              <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                <i class="fas fa-check text-sm text-green-600"></i>
+              </div>
+              <span>Flexible working hours - be your own boss</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                <i class="fas fa-check text-sm text-green-600"></i>
+              </div>
+              <span>Earn up to ₹35,000 per week with consistent service</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                <i class="fas fa-check text-sm text-green-600"></i>
+              </div>
+              <span>Smart routing to minimize travel between jobs</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                <i class="fas fa-check text-sm text-green-600"></i>
+              </div>
+              <span>Transparent payment system with weekly settlements</span>
+            </li>
+            <li class="flex items-start">
+              <div class="bg-green-100 p-1 rounded-full mr-3 mt-1">
+                <i class="fas fa-check text-sm text-green-600"></i>
+              </div>
+              <span>Continuous training and skill development provided</span>
+            </li>
+          </ul>
+          <button class="bg-blue-600 hover:bg-blue-700 text-white py-3 px-8 rounded-lg font-bold transition duration-300">
+            Join as a Mechanic
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Safety & Trust -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12">Safety & Trust</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Safety 1 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="h-16 w-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+            <i class="fas fa-shield-alt text-2xl text-yellow-600"></i>
+          </div>
+          <h3 class="font-bold text-center mb-3">Verified Mechanics Only</h3>
+          <p class="text-gray-600 text-center">All mechanics undergo rigorous background checks and skill verification before joining our platform.</p>
+        </div>
+        
+        <!-- Safety 2 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="h-16 w-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+            <i class="fas fa-lock text-2xl text-yellow-600"></i>
+          </div>
+          <h3 class="font-bold text-center mb-3">Secure & Trackable</h3>
+          <p class="text-gray-600 text-center">Every service is tracked, recorded, and secured with end-to-end encryption for your safety.</p>
+        </div>
+        
+        <!-- Safety 3 -->
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="h-16 w-16 bg-yellow-100 rounded-full flex items-center justify-center mb-4 mx-auto">
+            <i class="fas fa-moon text-2xl text-yellow-600"></i>
+          </div>
+          <h3 class="font-bold text-center mb-3">Women's Safety Priority</h3>
+          <p class="text-gray-600 text-center">Additional safety measures for women travelers, especially during night hours with SOS features.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Call To Action -->
+  <section class="gradient-bg text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Join FixMyRide – Be Safe, Be Connected</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Never worry about vehicle breakdowns again. Download the app now and experience worry-free travels.</p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <button class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 flex items-center justify-center">
+          <i class="fab fa-google-play mr-2 text-xl"></i>
+          Play Store
+        </button>
+        <button class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition duration-300 flex items-center justify-center">
+          <i class="fab fa-apple mr-2 text-xl"></i>
+          App Store
+        </button>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-xl font-bold text-white mb-4">FixMyRide</h3>
+          <p class="mb-4">The most trusted roadside assistance platform connecting drivers with skilled mechanics across India.</p>
+          <div class="flex space-x-4">
+            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-300 hover:text-white"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white">About Us</a></li>
+            <li><a href="#" class="hover:text-white">How It Works</a></li>
+            <li><a href="#" class="hover:text-white">For Mechanics</a></li>
+            <li><a href="#" class="hover:text-white">Safety</a></li>
+            <li><a href="#" class="hover:text-white">Blog</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Support</h4>
+          <ul class="space-y-2">
+            <li><a href="#" class="hover:text-white">Help Center</a></li>
+            <li><a href="#" class="hover:text-white">FAQs</a></li>
+            <li><a href="#" class="hover:text-white">Contact Us</a></li>
+            <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+            <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Contact</h4>
+          <ul class="space-y-2">
+            <li class="flex items-start">
+              <i class="fas fa-map-marker-alt mr-3 mt-1"></i>
+              <span>Bengluru, India</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-phone mr-3 mt-1"></i>
+              <span>+91 8317347169</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-envelope mr-3 mt-1"></i>
+              <span>support@fixmyride.com</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p>&copy; 2025 FixMyRide. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple interactivity demo
+    document.addEventListener('DOMContentLoaded', function() {
+      const ctaButtons = document.querySelectorAll('.cta-button');
+      ctaButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          alert('App download or help request would initiate here in the actual application!');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
